@@ -1,11 +1,12 @@
+html{
+  background-color: red;
+}
+
 h1 {
   background-color: green;
   color: white;
-  font-size: 10px;
   text-align: center;
+  font-size: 100px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   }
 
-   html{
-     background-color: red;
-   }
