@@ -49,29 +49,33 @@ else{
   console.log('Yes or No answers please!')
 }
 
-//I turned this section into a commit to utilize .toUpperCase() in the next section
-//var myMtn = prompt('Is Luke\'s favorite hike around Seattle Mt. Ranier?');
-//if(myMtn === 'yes' || myMtn === 'Yes' || myMtn === 'Y' || myMtn === 'y'){
-//  alert('No, he hasn\'t had a chance to do any hikes in the area yet...');
-//} else if(myMtn === 'no' || myMtn === 'No' || myMtn === 'N' || myMtn === 'n'){
-//  alert('You\'re right. He hasn\'t had a chance to do any hikes in the area ////yet...');
-//}
-//else{
-//  console.log('Yes or No answers please!')
-//}
-
 var myMtn = prompt('Is Luke\'s favorite hike around Seattle Mt. Ranier?');
 var myMtn2 = myMtn.toUpperCase();
-  if (myMtn2 === 'YES' || myMtn2 === 'Y'){
+if (myMtn2 === 'YES' || myMtn2 === 'Y'){
   alert('No, he hasn\'t had a chance to do any hikes in the area yet...');
   console.log('You guessed wrong')
 } else if(myMtn2 === ''){
   alert('You have to answer Yes or No')
 }
   else if(myMtn2 === 'NO' || myMtn2 === 'N'){
-  alert('You\'re right. He hasn\'t had a chance to do any hikes in the area ////yet...');
+  alert('You\'re right. He hasn\'t had a chance to do any hikes in the area yet...');
   console.log('You\'re right!')
 }
 else{
   console.log('Yes or No answers please!')
+}
+
+
+var userAnswer = prompt('How many times has Luke been back and forth from Korea?');
+var guessLimit = 4;
+var numGuesses = 0;
+if (userAnswer > '12' && numGuesses < guessLimit) {
+  userAnswer = prompt('That\'s too high. Try Again');
+  numGuesses++;
+} else if(userAnswer < '12' && numGuesses < guessLimit) {
+  userAnswer = prompt('That\'s too low. Try Again');
+  numGuesses++;
+} else if(userAnswer === '12' && numGuesses < guessLimit) {
+  userAnswer = prompt('That\'s Right!');
+  numGuesses++;
 }
