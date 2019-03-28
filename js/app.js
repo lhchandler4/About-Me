@@ -66,22 +66,22 @@ yesNoQuestion();
 //Sixth Question. Guess a number question: Maximum 4 tries and correct answer is 12
 var userAnswer = prompt('How many times has Luke been back and forth from Korea? Enter a numerical value:');
 var guessLimit = 4;
-var numGuesses = 0;
+var numGuesses = 1;
 
-while (numGuesses < 3) {
+while (numGuesses <= guessLimit) { // change from 3 to guessLimit (4)
   console.log(numGuesses);
-  if (Number(userAnswer) > 12 && numGuesses < guessLimit) {
+  if (Number(userAnswer) > 12) {
     userAnswer = prompt('That\'s too high. Try Again');
     numGuesses++;
-  } else if(Number(userAnswer) < 12 && numGuesses < guessLimit) {
+  } else if (Number(userAnswer) < 12) {
     userAnswer = prompt('That\'s too low. Try Again');
     numGuesses++;
-  } else if(Number(userAnswer) === 12) {
+  } else if (Number(userAnswer) === 12) {
     alert('That\'s Right!');
     break;
   }
 }
-if (numGuesses === 3) {
+if (numGuesses > 4) {
   alert('You\'re out of guesses....');
 }
 
