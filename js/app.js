@@ -91,6 +91,7 @@ if (numGuesses === 3) {
 var guessLimit2 = 6;
 var numGuesses2 = 0;
 var statesTrain = ['South Carolina', 'California', 'Kentucky', 'Texas', 'Georgia'];
+var correct = false;
 
 while (numGuesses2 < guessLimit2) {
   var userGuess = prompt('Name one of the states where Luke did training while in the Army');
@@ -98,14 +99,18 @@ while (numGuesses2 < guessLimit2) {
     if (userGuess === statesTrain[i]) {
       console.log('Correct!');
       alert('Correct!');
+      numGuesses2 = guessLimit2 + 1;
+      correct = true;
       break;
-    }else {
-      continue;
     }
   }
-  numGuesses2++;
-  console.log(numGuesses2);
-  alert('Wrong answer. Your guessed ' + userGuess + 'You have used ' + numGuesses2 + ' of 6 guesses. Try again');
+  if (correct === false) {
+    console.log(numGuesses2);
+    alert('Wrong answer. Your guessed ' + userGuess + ' You have used ' + numGuesses2 + ' of 6 guesses. Try again');
+    numGuesses2++;
+  } else {
+    break;
+  }
 }
 
 
