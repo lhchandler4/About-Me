@@ -1,5 +1,7 @@
 'use strict';
 
+//First Question
+var userName = prompt('Hey! What\'s your name?');
 var myState = prompt('Did Luke spend most of his life in Tennessee');
 if(myState === 'yes' || myState === 'Yes' || myState === 'Y' || myState === 'y'){
   alert('You are right! He spent his first 22 years there.');
@@ -13,6 +15,7 @@ else{
   console.log('Please answer either Yes or No. All questions follow Yes/No format!');
 }
 
+//Second Question
 var myChild = prompt('Is Luke an only child?');
 if(myChild === 'yes' || myChild === 'Yes' || myChild === 'Y' || myChild === 'y'){
   alert('Nope. He has 2 sisters and 1 brother.');
@@ -25,6 +28,7 @@ else{
   console.log('Yes or No answers please!');
 }
 
+//Third Question
 var myLang = prompt('Does Luke speak a foreign language?');
 if(myLang === 'yes' || myLang === 'Yes' || myLang === 'Y' || myLang === 'y'){
   alert('You are correct. He speaks Korean');
@@ -37,6 +41,7 @@ else{
   console.log('Yes or No answers please!');
 }
 
+//Fourth Question
 var myPet = prompt('Does Luke have a pet at home?');
 if(myPet === 'yes' || myPet === 'Yes' || myPet === 'Y' || myPet === 'y'){
   alert('No.... He does\'t have a pet but really wants a cat and dog!');
@@ -49,6 +54,7 @@ else{
   console.log('Yes or No answers please!');
 }
 
+//Fifth Question
 var myMtn = prompt('Is Luke\'s favorite hike around Seattle Mt. Ranier?');
 var myMtn2 = myMtn.toUpperCase();
 if (myMtn2 === 'YES' || myMtn2 === 'Y'){
@@ -65,7 +71,7 @@ else{
   console.log('Yes or No answers please!');
 }
 
-//Guess a number question: Maximum 4 tries and correct answer is 12
+//Sixth Question. Guess a number question: Maximum 4 tries and correct answer is 12
 var userAnswer = prompt('How many times has Luke been back and forth from Korea? Enter a numerical value:');
 var guessLimit = 4;
 var numGuesses = 0;
@@ -87,7 +93,7 @@ if (numGuesses === 3) {
   alert('You\'re out of guesses....');
 }
 
-//Question with multiple correct answers
+//Seventh Question. A question with multiple correct answers
 var guessLimit2 = 6;
 var numGuesses2 = 0;
 var statesTrain = ['South Carolina', 'California', 'Kentucky', 'Texas', 'Georgia'];
@@ -105,9 +111,9 @@ while (numGuesses2 < guessLimit2) {
     }
   }
   if (correct === false) {
-    console.log(numGuesses2);
-    alert('Wrong answer. Your guessed ' + userGuess + ' You have used ' + numGuesses2 + ' of 6 guesses. Try again');
     numGuesses2++;
+    console.log(numGuesses2);
+    alert('Sorry ' + userName + ' that was the wrong answer. Your guessed ' + userGuess + '. You now have used ' + numGuesses2 + ' of 6 guesses. Try again');
   } else {
     break;
   }
