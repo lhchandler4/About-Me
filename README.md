@@ -4,6 +4,7 @@
 Driver: Levi Porter
 Navigator: Luke Chandler
 
+We went and changed all the questions to include function. Also fixed the logic on question 5. 
 ---
 # Project Title
 
