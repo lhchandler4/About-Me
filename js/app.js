@@ -1,122 +1,123 @@
 'use strict';
 
-//First Question
+//Name
 var userName = prompt('Hey! What\'s your name?');
-var myState = prompt('Did Luke spend most of his life in Tennessee');
-if(myState === 'yes' || myState === 'Yes' || myState === 'Y' || myState === 'y'){
-  alert('You are right! He spent his first 22 years there.');
-  console.log('You\'re right!');
-} 
-else if(myState === 'no' || myState === 'No' || myState === 'N' || myState === 'n'){
-  alert('Nope. He did spend most of his life in Tennessee.');
-  console.log('You guessed wrong');
-}
-else{
-  console.log('Please answer either Yes or No. All questions follow Yes/No format!');
-}
 
-//Second Question
-var myChild = prompt('Is Luke an only child?');
-if(myChild === 'yes' || myChild === 'Yes' || myChild === 'Y' || myChild === 'y'){
-  alert('Nope. He has 2 sisters and 1 brother.');
-  console.log('You guessed wrong');
-} else if(myChild === 'no' || myChild === 'No' || myChild === 'N' || myChild === 'n'){
-  alert('You are right. He is one of 4 children.');
-  console.log('You\'re right!');
-}
-else{
-  console.log('Yes or No answers please!');
-}
+// Yes, Yes, No, No, No
+var aboutQuestion = ['Did Luke spend most of his life in Tennessee','Does Luke speak a foreign language?','Is Luke an only child?','Does Luke have a pet at home?','Is Luke\'s favorite hike around Seattle Mt. Ranier?'];
+var expectedYes = ['Yes','yes','y','Y'];
+var expectedNo = ['No', 'no', 'N', 'n'];
+var correctResponse = [userName + '! You are right! He spent his first 22 years there.','Hey ' + userName + '! You are correct. He speaks Korean','That is right ' +userName + '. He is one of 4 children.','Well ' + userName + '. Unfortunately you\'re right... No pets as of yet...','You\'re right ' + userName + '. He hasn\'t had a chance to do any hikes in the area yet...'];
+var incorrectResponse = ['Nope. He did spend most of his life in Tennessee.','Nah. He does speak a foreign language. Korean!','Nope. He has 2 sisters and 1 brother.','No, ' + userName + ' he hasn\'t had a chance to do any hikes in the area yet...','No, he hasn\'t had a chance to do any hikes in the area yet...'];
 
-//Third Question
-var myLang = prompt('Does Luke speak a foreign language?');
-if(myLang === 'yes' || myLang === 'Yes' || myLang === 'Y' || myLang === 'y'){
-  alert('You are correct. He speaks Korean');
-  console.log('You\'re right!');
-} else if(myLang === 'no' || myLang === 'No' || myLang === 'N' || myLang === 'n'){
-  alert('Nah. He does speak a foreign language. Korean!');
-  console.log('You guessed wrong');
-}
-else{
-  console.log('Yes or No answers please!');
-}
+//First Five Questions:
 
-//Fourth Question
-var myPet = prompt('Does Luke have a pet at home?');
-if(myPet === 'yes' || myPet === 'Yes' || myPet === 'Y' || myPet === 'y'){
-  alert('No.... He does\'t have a pet but really wants a cat and dog!');
-  console.log('You guessed wrong');
-} else if(myPet === 'no' || myPet === 'No' || myPet === 'N' || myPet === 'n'){
-  alert('Unfortunately you\'re right... No pets as of yet...');
-  console.log('You\'re right!');
-}
-else{
-  console.log('Yes or No answers please!');
-}
+function yesNoQuestion() {
+  //5 Questions: some yes some no. 
+  // prompt the question (loop through)/ user response
+  for (var i = 0; i < aboutQuestion.length; i++){
+    var answer = prompt(aboutQuestion[i]);
+    // check if index <= 1 for yes
+    if(i <= 1){
+      // check if response is any of expectedYes values
+      // if yes then alert correct
+      // if response is not yes then alert you are wrong
+      var incorrectAlert = null;
+      for (var j = 0; j < expectedYes.length; j++){
+        if(answer === expectedYes[j]){
+          alert(correctResponse[i]);
+          incorrectAlert = false;
+          break;
+        } else {
+          incorrectAlert = true;
+        }
+      }
+      if (incorrectAlert === true) {
+        alert(incorrectResponse[i]);
+      }
+    }
+    // check if index > 1 for no
+    else if (i > 1){
+      //console.log j so I could see if it had a value. Checking scope
+      console.log(j);
+      var incorrectAlert1 = null;
+      for (var k = 0; k < expectedNo.length; k++){
+        if(answer === expectedNo[k]){
+          alert(correctResponse[i]);
+          incorrectAlert1 = false;
+          break;
+        } else {
+          incorrectAlert1 = true;
+        }
+      }
+      if (incorrectAlert1 === true) {
+        alert(incorrectResponse[i]);
+      }
+    }
+    //check if response is any of expectedNo values
+    //if yes then alert correct
+    //if response is not no then alert you are wrong
 
-//Fifth Question
-var myMtn = prompt('Is Luke\'s favorite hike around Seattle Mt. Ranier?');
-var myMtn2 = myMtn.toUpperCase();
-if (myMtn2 === 'YES' || myMtn2 === 'Y'){
-  alert('No, he hasn\'t had a chance to do any hikes in the area yet...');
-  console.log('You guessed wrong');
-} else if(myMtn2 === ''){
-  alert('You have to answer Yes or No');
-}
-else if(myMtn2 === 'NO' || myMtn2 === 'N'){
-  alert('You\'re right. He hasn\'t had a chance to do any hikes in the area yet...');
-  console.log('You\'re right!');
-}
-else{
-  console.log('Yes or No answers please!');
-}
-
-//Sixth Question. Guess a number question: Maximum 4 tries and correct answer is 12
-var userAnswer = prompt('How many times has Luke been back and forth from Korea? Enter a numerical value:');
-var guessLimit = 4;
-var numGuesses = 0;
-
-while (numGuesses < 3) {
-  console.log(numGuesses);
-  if (Number(userAnswer) > 12 && numGuesses < guessLimit) {
-    userAnswer = prompt('That\'s too high. Try Again');
-    numGuesses++;
-  } else if(Number(userAnswer) < 12 && numGuesses < guessLimit) {
-    userAnswer = prompt('That\'s too low. Try Again');
-    numGuesses++;
-  } else if(Number(userAnswer) === 12) {
-    alert('That\'s Right!');
-    break;
   }
 }
-if (numGuesses === 3) {
-  alert('You\'re out of guesses....');
-}
+yesNoQuestion();
 
-//Seventh Question. A question with multiple correct answers
-var guessLimit2 = 6;
-var numGuesses2 = 0;
-var statesTrain = ['South Carolina', 'California', 'Kentucky', 'Texas', 'Georgia'];
-var correct = false;
 
-while (numGuesses2 < guessLimit2) {
-  var userGuess = prompt('Name one of the states where Luke did training while in the Army');
-  for (var i = 0; i < statesTrain.length; i++) {
-    if (userGuess === statesTrain[i]) {
-      console.log('Correct!');
-      alert('Correct!');
-      numGuesses2 = guessLimit2 + 1;
-      correct = true;
+//Sixth Question. Guess a number question: Maximum 4 tries and correct answer is 12
+
+var userAnswer = prompt('How many times has Luke been back and forth from Korea? Enter a numerical value:');
+function numberOfTimes(userAnswer) {
+
+  var guessLimit = 4;
+  var numGuesses = 1;
+
+  while (numGuesses <= guessLimit) { // change from 3 to guessLimit (4)
+    console.log(numGuesses);
+    if (Number(userAnswer) > 12) {
+      userAnswer = prompt('That\'s too high ' + userName + '. Try Again');
+      numGuesses++;
+    } else if (Number(userAnswer) < 12) {
+      userAnswer = prompt('That\'s too low ' + userName + '. Try Again');
+      numGuesses++;
+    } else if (Number(userAnswer) === 12) {
+      alert('That\'s Right!');
       break;
     }
   }
-  if (correct === false) {
-    numGuesses2++;
-    console.log(numGuesses2);
-    alert('Sorry ' + userName + ' that was the wrong answer. Your guessed ' + userGuess + '. You now have used ' + numGuesses2 + ' of 6 guesses. Try again');
-  } else {
-    break;
+  if (numGuesses > 4) {
+    alert('You\'re out of guesses....');
   }
 }
 
+numberOfTimes(userAnswer);
 
+//Seventh Question. A question with multiple correct answers
+
+function whichState() {
+  var guessLimit2 = 6;
+  var numGuesses2 = 0;
+  var statesTrain = ['South Carolina', 'California', 'Kentucky', 'Texas', 'Georgia'];
+  var correct = false;
+
+  while (numGuesses2 < guessLimit2) {
+    var userGuess = prompt('Name one of the states where Luke did training while in the Army');
+    for (var i = 0; i < statesTrain.length; i++) {
+      if (userGuess === statesTrain[i]) {
+        console.log('Correct!');
+        alert(userName + '! That is correct!');
+        numGuesses2 = guessLimit2 + 1;
+        correct = true;
+        break;
+      }
+    }
+    if (correct === false) {
+      numGuesses2++;
+      console.log(numGuesses2);
+      alert('Sorry ' + userName + ' that was the wrong answer. You guessed ' + userGuess + '. You now have used ' + numGuesses2 + ' of 6 guesses. Try again');
+    } else {
+      break;
+    }
+  }
+}
+
+whichState();

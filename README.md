@@ -1,4 +1,11 @@
 # About-Me
+
+## Lab 04
+Driver: Levi Porter
+Navigator: Luke Chandler
+
+We went and changed all the questions to include function. Also fixed the logic on question 5. 
+---
 # Project Title
 
 This a page about me. It is a project I am working on in 201 practicing my HTML, CSS, and JS. 
