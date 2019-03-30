@@ -1,18 +1,25 @@
+/* #navigation {
+    display: inline;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+} */
+
 body {
-  background-image: url('../img/Ranier.jpg');
+  background-image: url('../img/Backgroung.jpg');
   background-repeat: no-repeat;
-  background-color: rgb(71, 99, 158);
+  background-color: rgb(99, 119, 161);
   background-size: cover;
   background-position: center;
   }
 
 h1 {
+  font-family: 'Cinzel', serif;
   color: white;
   background-color: rgb(71, 99, 158);
   text-align: center;
   font-style: strong;
   font-size: 75px;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   }
 
 h2 {
@@ -47,7 +54,7 @@ ul {
 }
 
 ol {
-  list-style: decimal;
+    list-style: decimal;
   margin-left: 20px;
   padding: 20px;
   padding-left: 30px;
