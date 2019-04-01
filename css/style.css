@@ -1,5 +1,5 @@
 body {
-  background-image: url('../img/Ranier.jpg');
+  background-image: url('../img/Mount.jpg');
   background-repeat: no-repeat;
   background-color: rgb(71, 99, 158);
   background-size: cover;
@@ -9,11 +9,17 @@ body {
 h1 {
   color: white;
   background-color: rgb(71, 99, 158);
+  padding: 50px;
   text-align: center;
   font-style: strong;
   font-size: 75px;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  }
+}
+
+.circular--square {
+  border-radius: 50%;
+  size: 50%;
+}
 
 h2 {
   font-style: strong;
